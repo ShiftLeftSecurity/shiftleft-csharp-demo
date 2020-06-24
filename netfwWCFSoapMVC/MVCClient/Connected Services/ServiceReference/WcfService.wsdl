@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WcfService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:53271/WcfService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:53271/WcfService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:53271/WcfService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/netfwWCFwithMVC" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWcfService_GetPatients1_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatients1" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetPatients1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatients1Response" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetPatients2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatients2" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetPatients2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatients2Response" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetPatients3_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatients3" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetPatients3_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatients3Response" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetPatients4_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatients4" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetPatients4_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatients4Response" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetPatients5_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatients5" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetPatients5_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatients5Response" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetPatients6_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatients6" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetPatients6_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatients6Response" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetPatientDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientDetails" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetPatientDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_SomeSoapData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SomeSoapData" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_SomeSoapData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SomeSoapDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_ModifySoapData_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifySoapData" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_ModifySoapData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifySoapDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWcfService">
+    <wsdl:operation name="GetPatients1">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfService/GetPatients1" message="tns:IWcfService_GetPatients1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfService/GetPatients1Response" message="tns:IWcfService_GetPatients1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatients2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfService/GetPatients2" message="tns:IWcfService_GetPatients2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfService/GetPatients2Response" message="tns:IWcfService_GetPatients2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatients3">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfService/GetPatients3" message="tns:IWcfService_GetPatients3_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfService/GetPatients3Response" message="tns:IWcfService_GetPatients3_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatients4">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfService/GetPatients4" message="tns:IWcfService_GetPatients4_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfService/GetPatients4Response" message="tns:IWcfService_GetPatients4_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatients5">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfService/GetPatients5" message="tns:IWcfService_GetPatients5_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfService/GetPatients5Response" message="tns:IWcfService_GetPatients5_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatients6">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfService/GetPatients6" message="tns:IWcfService_GetPatients6_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfService/GetPatients6Response" message="tns:IWcfService_GetPatients6_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfService/GetPatientDetails" message="tns:IWcfService_GetPatientDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfService/GetPatientDetailsResponse" message="tns:IWcfService_GetPatientDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SomeSoapData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfService/SomeSoapData" message="tns:IWcfService_SomeSoapData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfService/SomeSoapDataResponse" message="tns:IWcfService_SomeSoapData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifySoapData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfService/ModifySoapData" message="tns:IWcfService_ModifySoapData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfService/ModifySoapDataResponse" message="tns:IWcfService_ModifySoapData_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWcfService" type="tns:IWcfService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPatients1">
+      <soap:operation soapAction="http://tempuri.org/IWcfService/GetPatients1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatients2">
+      <soap:operation soapAction="http://tempuri.org/IWcfService/GetPatients2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatients3">
+      <soap:operation soapAction="http://tempuri.org/IWcfService/GetPatients3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatients4">
+      <soap:operation soapAction="http://tempuri.org/IWcfService/GetPatients4" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatients5">
+      <soap:operation soapAction="http://tempuri.org/IWcfService/GetPatients5" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatients6">
+      <soap:operation soapAction="http://tempuri.org/IWcfService/GetPatients6" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientDetails">
+      <soap:operation soapAction="http://tempuri.org/IWcfService/GetPatientDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SomeSoapData">
+      <soap:operation soapAction="http://tempuri.org/IWcfService/SomeSoapData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifySoapData">
+      <soap:operation soapAction="http://tempuri.org/IWcfService/ModifySoapData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WcfService">
+    <wsdl:port name="BasicHttpBinding_IWcfService" binding="tns:BasicHttpBinding_IWcfService">
+      <soap:address location="http://localhost:53271/WcfService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

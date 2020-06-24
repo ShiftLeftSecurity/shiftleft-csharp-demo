@@ -1,0 +1,73 @@
+﻿@model IEnumerable<MVCClient.ServiceReference.Patient>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Allergies)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Diagnostics)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SSID)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Allergies)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diagnostics)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SSID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PatientId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PatientId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PatientId })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<br />
+<br />
+<h4>Temporary (WIP)</h4>
+<div>
+    @Html.Label("this is a label for the text box")
+    @Html.TextBox("a text box is here", "abc")
+    <input type="button" title="Send" value="Send text BOX input" onclick="location.href='@Url.Action("OnTextBox", "Patient")'" />
+</div>
+<br />
+<div>
+    @Html.Label("this is a label for the text box")
+    @Html.TextArea("a text area is here")
+    <input type="button" title="Send" value="Send text AREA input" onclick="location.href='@Url.Action("OnTextArea", "Patient")'" />
+</div>

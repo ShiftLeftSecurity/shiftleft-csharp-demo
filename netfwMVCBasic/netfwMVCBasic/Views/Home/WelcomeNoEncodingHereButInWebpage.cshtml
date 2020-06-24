@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "WelcomeNoEncodingHereButInWebpage";
+}
+
+<h2>WelcomeNoEncodingHereButInWebpage</h2>
+
+<div>
+    the data below is encoded by razor
+    <br />
+    <br />
+    @Html.Encode(ViewData["non-encoded"])
+</div>

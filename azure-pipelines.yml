@@ -1,0 +1,74 @@
+variables:
+- group: shiftleft-token
+
+trigger:
+- master
+- feature/*
+
+pool:
+  vmImage: 'windows-latest'
+
+stages:
+- stage: Builders
+  displayName: Build sample applications
+  jobs:
+  - job: Build
+    displayName: Build .Net and .Net core apps
+    pool:
+      vmImage: 'windows-latest'
+    steps:
+    - task: NuGetToolInstaller@1
+
+    - task: PowerShell@2
+      displayName: Download ShiftLeft cli
+      inputs:
+        targetType: 'inline'
+        script: |
+          Invoke-WebRequest -Uri 'https://cdn.shiftleft.io/download/sl-latest-windows-x64.zip' -OutFile $(Agent.HomeDirectory)\sl.zip
+          Expand-Archive -Path $(Agent.HomeDirectory)\sl.zip -DestinationPath $(Agent.HomeDirectory)\
+
+    - task: DotNetCoreCLI@2
+      displayName: Build console app
+      inputs:
+        command: 'build'
+        projects: '$(Build.SourcesDirectory)\netcoreConsole'
+    - task: CmdLine@2
+      displayName: Analyze with Inspect
+      inputs:
+        script: |
+          $(Agent.HomeDirectory)\sl.exe analyze --force --app netcoreConsole --tag branch=$(Build.SourceBranchName) --csharp --dotnet-core --cpg netcoreConsole/netcoreConsole/netcoreConsole.csproj
+        workingDirectory: '$(Build.SourcesDirectory)'
+      env:
+        SHIFTLEFT_ORG_ID: $(SHIFTLEFT_ORG_ID)
+        SHIFTLEFT_ACCESS_TOKEN: $(SHIFTLEFT_ACCESS_TOKEN)
+
+    - task: DotNetCoreCLI@2
+      displayName: Build web api
+      inputs:
+        command: 'build'
+        projects: '$(Build.SourcesDirectory)\netcoreWebapi'
+
+    - task: CmdLine@2
+      displayName: Analyze with Inspect
+      inputs:
+        script: |
+          $(Agent.HomeDirectory)\sl.exe analyze --force --app netcoreWebapi --tag branch=$(Build.SourceBranchName) --csharp --dotnet-core --cpg netcoreWebapi/netcoreWebapi.csproj
+        workingDirectory: '$(Build.SourcesDirectory)'
+      env:
+        SHIFTLEFT_ORG_ID: $(SHIFTLEFT_ORG_ID)
+        SHIFTLEFT_ACCESS_TOKEN: $(SHIFTLEFT_ACCESS_TOKEN)
+
+    - task: MSBuild@1
+      inputs:
+        solution: '$(Build.SourcesDirectory)/netfwWebapi/*.sln'
+        msbuildVersion: '16.0'
+
+    - task: CmdLine@2
+      displayName: Analyze with Inspect
+      inputs:
+        script: |
+          $(Agent.HomeDirectory)\sl.exe analyze --force --app netfwWebapi --tag branch=$(Build.SourceBranchName) --csharp --cpg netfwWebapi/netfwWebapi.sln
+        workingDirectory: '$(Build.SourcesDirectory)'
+      env:
+        SHIFTLEFT_ORG_ID: $(SHIFTLEFT_ORG_ID)
+        SHIFTLEFT_ACCESS_TOKEN: $(SHIFTLEFT_ACCESS_TOKEN)
