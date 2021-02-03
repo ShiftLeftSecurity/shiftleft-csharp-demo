@@ -21,7 +21,7 @@ jobs:
     - name: Build console app
       run: dotnet build netcoreConsole
     - name: Analyze with inspect
-      run: .\sl analyze --app sl-netcoreConsole --sca --tag branch=$Env:GITHUB_REF --csharp --dotnet-core --cpg netcoreConsole/netcoreConsole/netcoreConsole.csproj
+      run: .\sl analyze --app sl-netcoreConsole --sca --sca-project-dir netcoreConsole --tag branch=$Env:GITHUB_REF --csharp --dotnet-core --cpg netcoreConsole/netcoreConsole/netcoreConsole.csproj
       env:
         SHIFTLEFT_ORG_ID: ${{ secrets.SHIFTLEFT_ORG_ID }}
         SHIFTLEFT_ACCESS_TOKEN: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
@@ -29,7 +29,7 @@ jobs:
     - name: Build web api
       run: dotnet build netcoreWebapi
     - name: Analyze with inspect
-      run: .\sl analyze --app sl-netcoreWebapi --sca --tag branch=$Env:GITHUB_REF --csharp --dotnet-core --cpg netcoreWebapi/netcoreWebapi.csproj
+      run: .\sl analyze --app sl-netcoreWebapi --sca --sca-project-dir netcoreWebapi --tag branch=$Env:GITHUB_REF --csharp --dotnet-core --cpg netcoreWebapi/netcoreWebapi.csproj
       env:
         SHIFTLEFT_ORG_ID: ${{ secrets.SHIFTLEFT_ORG_ID }}
         SHIFTLEFT_ACCESS_TOKEN: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
@@ -39,7 +39,7 @@ jobs:
     - name: Build netfwWebapi
       run: msbuild netfwWebapi/netfwWebapi.sln
     - name: Analyze with inspect
-      run: .\sl analyze --app sl-netfwWebapi --sca --tag branch=$Env:GITHUB_REF --csharp --cpg netfwWebapi/netfwWebapi.sln
+      run: .\sl analyze --app sl-netfwWebapi --sca --sca-project-dir netfwWebapi --tag branch=$Env:GITHUB_REF --csharp --cpg netfwWebapi/netfwWebapi.sln
       env:
         SHIFTLEFT_ORG_ID: ${{ secrets.SHIFTLEFT_ORG_ID }}
         SHIFTLEFT_ACCESS_TOKEN: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
