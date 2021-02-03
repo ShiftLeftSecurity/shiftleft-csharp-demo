@@ -1,3 +1,5 @@
+name: ShiftLeft NGSAST for .Net apps
+
 on:
   pull_request:
   workflow_dispatch:
@@ -27,7 +29,7 @@ jobs:
     - name: Build web api
       run: dotnet build netcoreWebapi
     - name: Analyze with inspect
-      run: .\sl analyze --app netcoreWebapi --tag branch=$Env:GITHUB_REF --csharp --dotnet-core --cpg netcoreWebapi/netcoreWebapi.csproj
+      run: .\sl analyze --app sl-netcoreWebapi --sca --tag branch=$Env:GITHUB_REF --csharp --dotnet-core --cpg netcoreWebapi/netcoreWebapi.csproj
       env:
         SHIFTLEFT_ORG_ID: ${{ secrets.SHIFTLEFT_ORG_ID }}
         SHIFTLEFT_ACCESS_TOKEN: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
