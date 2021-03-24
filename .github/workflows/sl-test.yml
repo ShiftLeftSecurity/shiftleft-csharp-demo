@@ -56,7 +56,6 @@ jobs:
         }
         Invoke-RestMethod @params
     - name: Validate Build Rules
-      if: ${{ github.event_name == 'pull_request' }}
       run: 
         .\sl check-analysis --app shiftleft-csharp-demo `
         --branch "${{ github.head_ref || steps.extract_branch.outputs.branch }}" `
