@@ -9,6 +9,6 @@ For more information on how to setup ShiftLeft CORE on GitHub Actions see [the d
 
 ## Applications
 
-| Application Name |Technology, architecture | Packages, API, components | Framework/Version |
+| Application Name |Technology, architecture | Framework/Version |
 |------------------|-------------------------|-----------------|-------------------|
-| netcoreWebapi | WebAPI, REST | TODO | .NET Core 2.0 |
+| netcoreWebapi | WebAPI, REST | .NET Core 2.0 |
