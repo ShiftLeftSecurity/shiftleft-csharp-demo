@@ -63,7 +63,7 @@ jobs:
         Expand-Archive -Path sl.zip -DestinationPath .
     - name: Validate Build Rules
       run: |
-        .\sl check-analysis --app shiftleft-csharp-demo `
+        .\sl check-analysis --app --v2 shiftleft-csharp-demo `
         --branch "${{ github.head_ref || steps.extract_branch.outputs.branch }}" `
         --report `
         --github-pr-number=${{github.event.number}} `
