@@ -1,0 +1,8 @@
+build_rules:
+  - id: empty
+  - id: critical
+    severity: [critical]
+  - id: reachable
+    finding_types: [oss_vuln]
+    options:
+      reachable: true
