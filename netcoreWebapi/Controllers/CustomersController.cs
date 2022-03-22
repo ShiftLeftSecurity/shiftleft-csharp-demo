@@ -105,7 +105,7 @@ namespace netcoreWebapi.Controllers
             //Remediated Code Block
             string query = "INSERT INTO customers @sql";
             var command = new SqlCommand(query, conn);
-            command.Parameters.AddwithValue("@slq", sql);
+            command.Parameters.AddWithValue("@slq", sql);
             // ****************************************************
             int result = command.ExecuteNonQuery();
             return Json(string.Format("Result: {0}", result));
